@@ -25,18 +25,9 @@
     node.append(document.createTextNode('Javier Pastore'));
     document.querySelector('ul').append(node);
    }
-/*
-   function button(){
-      let button  = document.querySelector('.btn-selected');
-    button.disabled = ('when 5 players added')
-      if(document.querySelector('btn-selected').value){
-        button.disabled = true;
-      }
-      else{
-        alert('only 5 players')
-      }
-    }*/
+
 //calculatlion
+
 document.getElementById('btn_calculate').addEventListener('click', function(){
   const PerPlayerCost = parseInt(document.getElementById('player_cost').value);
   const expenses_cost = document.getElementById('expenses_cost');
@@ -48,10 +39,19 @@ document.getElementById('btn_calculate').addEventListener('click', function(){
 });
 
 document.getElementById('btn_calculate_total').addEventListener('click',function(){
-  //const expenses_cost = document.getElementById('expenses_cost').value;
+  const PerPlayerCost = parseInt(document.getElementById('player_cost').value);
+  const expenses_cost = document.getElementById('expenses_cost');
+  const perPlayer_cost_total = PerPlayerCost*5;
+  expenses_cost.innerText = perPlayer_cost_total;
   const manager_cost = parseInt(document.getElementById('manager_cost').value);
   const coach_cost = parseInt(document.getElementById('coach_cost').value);
   const total_cost = document.getElementById('total_cost');
-  const total_cost_calculate  = expenses_cost.value + manager_cost + coach_cost;
-  total_cost.innerText = total_cost_calculate;
+  const total_cost_calculate = perPlayer_cost_total + manager_cost + coach_cost;
+  
+  total_cost.innerText = total_cost_calculate ;
+  
+  
 });
+
+
+
