@@ -46,15 +46,13 @@
     document.querySelector('ul').append(node);
    }
 
-
-
-
- document.getElementById('btn_calculate').addEventListener('click',function(){
-  const playerCost = parseInt(document.getElementById('player_cost').value);
-  console.log(playerCost.clicked);
- // const perPlayer_cost = parseInt(document.getElementById('expenses_cost').value);
-  //const expenses_cost = player-cost.value * 5;
-
+//calculatlion
+document.getElementById('btn_calculate').addEventListener('click', function(){
+  const PerPlayerCost = parseInt(document.getElementById('player_cost').value);
+  const expenses_cost = document.getElementById('expenses_cost');
+  const perPlayer_cost_total = PerPlayerCost*5;
+  if(isNaN(PerPlayerCost)){
+    alert("enter a number")
+  }
+  expenses_cost.innerText= perPlayer_cost_total;
 });
-
-
